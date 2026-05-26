@@ -1,0 +1,98 @@
+[
+  {
+    "id": "rec-001",
+    "userId": "usr-003",
+    "candidateName": "Rajan Mehta",
+    "checkType": "Identity Verification",
+    "status": "Completed",
+    "priority": "High",
+    "assignedTo": "surbhi.user",
+    "completionDate": "2024-06-02T14:30:00.000Z",
+    "createdAt": "2024-06-01T09:00:00.000Z",
+    "remarks": "All documents verified successfully."
+  },
+  {
+    "id": "rec-002",
+    "userId": "usr-003",
+    "candidateName": "Priya Sharma",
+    "checkType": "Employment History",
+    "status": "In Progress",
+    "priority": "Medium",
+    "assignedTo": "surbhi.user",
+    "completionDate": null,
+    "createdAt": "2024-06-10T09:00:00.000Z",
+    "remarks": "Awaiting previous employer confirmation."
+  },
+  {
+    "id": "rec-003",
+    "userId": "usr-004",
+    "candidateName": "Arjun Patel",
+    "checkType": "Criminal Record Check",
+    "status": "Completed",
+    "priority": "High",
+    "assignedTo": "singh.user",
+    "completionDate": "2024-06-15T11:00:00.000Z",
+    "createdAt": "2024-06-12T09:00:00.000Z",
+    "remarks": "No records found. Clear."
+  },
+  {
+    "id": "rec-004",
+    "userId": "usr-004",
+    "candidateName": "Neha Gupta",
+    "checkType": "Education Verification",
+    "status": "Pending",
+    "priority": "Low",
+    "assignedTo": "singh.user",
+    "completionDate": null,
+    "createdAt": "2024-06-20T09:00:00.000Z",
+    "remarks": "Request submitted to university."
+  },
+  {
+    "id": "rec-005",
+    "userId": "usr-005",
+    "candidateName": "Suman Roy",
+    "checkType": "Address Verification",
+    "status": "Failed",
+    "priority": "High",
+    "assignedTo": "sona.user",
+    "completionDate": "2024-06-25T16:00:00.000Z",
+    "createdAt": "2024-06-22T09:00:00.000Z",
+    "remarks": "Address mismatch detected. Escalated."
+  },
+  {
+    "id": "rec-006",
+    "userId": "usr-001",
+    "candidateName": "Vikram Singh",
+    "checkType": "Reference Check",
+    "status": "Completed",
+    "priority": "Medium",
+    "assignedTo": "astha.admin",
+    "completionDate": "2024-07-01T10:00:00.000Z",
+    "createdAt": "2024-06-28T09:00:00.000Z",
+    "remarks": "Positive references received."
+  },
+  {
+    "id": "rec-007",
+    "userId": "usr-001",
+    "candidateName": "Kavya Nair",
+    "checkType": "Social Media Screening",
+    "status": "In Progress",
+    "priority": "Low",
+    "assignedTo": "astha.admin",
+    "completionDate": null,
+    "createdAt": "2024-07-05T09:00:00.000Z",
+    "remarks": "Profile analysis underway."
+  },
+  {
+    "id": "rec-008",
+    "userId": "usr-002",
+    "candidateName": "Amit Desai",
+    "checkType": "Credit Check",
+    "status": "Pending",
+    "priority": "High",
+    "assignedTo": "bharti.admin",
+    "completionDate": null,
+    "createdAt": "2024-07-08T09:00:00.000Z",
+    "remarks": "Consent form pending."
+  }
+]

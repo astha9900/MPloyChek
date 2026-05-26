@@ -1,0 +1,30 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f6fa;
+  color: #212121;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Angular snackbar error style */
+.snack-error .mdc-snackbar__surface {
+  background: #c62828 !important;
+}
+
+/* Normalize Material card padding */
+.mat-mdc-card-content:first-child { padding-top: 16px; }
+.mat-mdc-card-content:last-child { padding-bottom: 16px; }
+
+/* Consistent row heights in Material tables */
+.mat-mdc-row { height: 52px; }
+.mat-mdc-header-row { height: 48px; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #bdbdbd; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9e9e9e; }

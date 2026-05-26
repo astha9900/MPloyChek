@@ -1,0 +1,26 @@
+h2[mat-dialog-title] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  color: #1a237e;
+  mat-icon { color: #3949ab; }
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 380px;
+  padding-top: 8px;
+}
+
+.form-row { margin-bottom: 4px; }
+
+.full-width { width: 100%; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}

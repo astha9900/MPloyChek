@@ -1,0 +1,62 @@
+[
+  {
+    "id": "usr-001",
+    "username": "astha.admin",
+    "password": "$2a$10$mEhkW7WTk/LS8T.PvdwjtOPecX4m0Lo2p09lio8NCfqe1STJzrwFm",
+    "role": "Admin",
+    "name": "Astha Singh",
+    "email": "astha.admin@nsqtech.com",
+    "department": "Engineering",
+    "phone": "+91-9876543210",
+    "status": "Active",
+    "createdAt": "2024-01-15T09:00:00.000Z"
+  },
+  {
+    "id": "usr-002",
+    "username": "bharti.admin",
+    "password": "$2a$10$B5FhhQeUWECDRHX6tK.2qee8YRqmUGUbOrbgPK1s6SgfetIXjurk2",
+    "role": "Admin",
+    "name": "Bharti Sharma",
+    "email": "bharti.admin@nsqtech.com",
+    "department": "Operations",
+    "phone": "+91-9876543211",
+    "status": "Active",
+    "createdAt": "2024-02-20T09:00:00.000Z"
+  },
+  {
+    "id": "usr-003",
+    "username": "surbhi.user",
+    "password": "$2a$10$SRgvDVtF36l1c18qZFviG..A2HY8OQ7Idu20Ff8ItMO.wjOrbBeYe",
+    "role": "General User",
+    "name": "Surbhi Gupta",
+    "email": "surbhi.user@nsqtech.com",
+    "department": "Sales",
+    "phone": "+91-9876543212",
+    "status": "Active",
+    "createdAt": "2024-03-10T09:00:00.000Z"
+  },
+  {
+    "id": "usr-004",
+    "username": "singh.user",
+    "password": "$2a$10$MQzVVlV6kkWG7oW/hkkmQ.SQZ1zO75VNa6.2zeBUHWmF4j1whZQr.",
+    "role": "General User",
+    "name": "Singh Rajput",
+    "email": "singh.user@nsqtech.com",
+    "department": "Marketing",
+    "phone": "+91-9876543213",
+    "status": "Active",
+    "createdAt": "2024-04-05T09:00:00.000Z"
+  },
+  {
+    "id": "usr-005",
+    "username": "sona.user",
+    "password": "$2a$10$bakuaPr/SPGHLaoa80y/3.YxHuPyp8EOuQ9c9nV0EfWSg9Oj4l9I2",
+    "role": "General User",
+    "name": "Sona Singh",
+    "email": "sona.user@nsqtech.com",
+    "department": "Finance",
+    "phone": "+91-9876543214",
+    "status": "Inactive",
+    "createdAt": "2024-05-01T09:00:00.000Z"
+  }
+]

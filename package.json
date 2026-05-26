@@ -1,0 +1,16 @@
+{
+  "name": "mploychek-spa",
+  "version": "1.0.0",
+  "description": "MPloyChek Digital Background Verification SPA — NSQTech Internship Challenge",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "start:backend": "cd backend && npm run dev",
+    "start:frontend": "cd frontend && npm start",
+    "start": "npx concurrently -n API,WEB -c blue,green \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

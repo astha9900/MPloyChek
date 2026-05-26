@@ -1,0 +1,156 @@
+<!-- Toolbar -->
+<mat-toolbar class="app-toolbar" color="primary">
+  <span class="toolbar-brand">
+    <mat-icon>verified_user</mat-icon>
+    MPloyChek
+  </span>
+  <span class="toolbar-page">Admin Panel</span>
+  <span class="spacer"></span>
+
+  <button mat-stroked-button routerLink="/dashboard" class="nav-btn">
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="userMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon> Sign Out
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="admin-container">
+
+  <!-- Stats Row -->
+  <div class="stats-row" *ngIf="!loading">
+    <mat-card class="stat-card">
+      <mat-icon color="primary">people</mat-icon>
+      <div>
+        <div class="stat-value">{{ dataSource.data.length }}</div>
+        <div class="stat-label">Total Users</div>
+      </div>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-icon color="accent">admin_panel_settings</mat-icon>
+      <div>
+        <div class="stat-value">{{ dataSource.data | adminCount }}</div>
+        <div class="stat-label">Admins</div>
+      </div>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-icon style="color:#2e7d32">check_circle</mat-icon>
+      <div>
+        <div class="stat-value">{{ dataSource.data | activeCount }}</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Users Table Card -->
+  <mat-card class="users-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>manage_accounts</mat-icon>
+        User Management
+      </mat-card-title>
+      <mat-card-subtitle>Add, edit, or remove platform users</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="table-actions">
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-label>Search users</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Name, email, role…" />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="openCreateDialog()">
+          <mat-icon>person_add</mat-icon> Add User
+        </button>
+      </div>
+
+      <div class="loading-state" *ngIf="loading">
+        <mat-spinner diameter="32"></mat-spinner>
+        <span>Loading users…</span>
+      </div>
+
+      <div class="table-wrapper" *ngIf="!loading">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let u">
+              <div class="user-name-cell">
+                <div class="user-avatar">{{ u.name.charAt(0) }}</div>
+                <div>
+                  <strong>{{ u.name }}</strong>
+                  <small>{{ u.username }}</small>
+                </div>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>User ID</th>
+            <td mat-cell *matCellDef="let u" class="mono">{{ u.username }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Role</th>
+            <td mat-cell *matCellDef="let u">
+              <app-status-chip [label]="u.role"></app-status-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let u">{{ u.email }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Department</th>
+            <td mat-cell *matCellDef="let u">{{ u.department || '—' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let u">
+              <app-status-chip [label]="u.status"></app-status-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Joined</th>
+            <td mat-cell *matCellDef="let u">{{ formatDate(u.createdAt) }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let u">
+              <button mat-icon-button color="primary" (click)="openEditDialog(u)" matTooltip="Edit user">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="confirmDelete(u)" matTooltip="Delete user">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns" class="user-row"></tr>
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell no-data" [attr.colspan]="displayedColumns.length">
+              <mat-icon>person_off</mat-icon>
+              <span>No users found</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]" pageSize="5" showFirstLastButtons></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
